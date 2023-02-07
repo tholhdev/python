@@ -25,3 +25,12 @@ jobs:
       #     url=google.com python url-check.py
       - name: Check result
         run: echo "${{ steps.step1.outputs.changelog }}"
+        
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=$(url=google.com python url-check.py)"
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}"
