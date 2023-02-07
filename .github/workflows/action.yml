@@ -18,6 +18,10 @@ jobs:
       # - name: Test with pytest
       #   run: pip test
       - name: Run python file
+        id: web_health_check
         run: |
           url=google.com python url-check.py
+      - name: Check web health check
+        if: ${{ steps.web_health_check.output }} == '200'
+        run: echo Đây là website
 

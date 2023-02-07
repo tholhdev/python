@@ -7,6 +7,10 @@ import requests
 
 url_test = os.environ['url']
 y='http://' + url_test
-print(y)
-x = requests.get(y)
-print(x.status_code)
+
+def get_status():
+    x = requests.get(y)
+    print(x.status_code)
+    return x.status_code
+
+get_status(y)
