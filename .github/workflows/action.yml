@@ -1,6 +1,6 @@
 name: Python package
 
-on: workflow_dispatch
+on: [push,workflow_dispatch]
 
 jobs:
   build:
@@ -16,5 +16,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Test with pytest
-        run: |
-          pytest
+        run: pip test
