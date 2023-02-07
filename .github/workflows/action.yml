@@ -19,5 +19,5 @@ jobs:
       #   run: pip test
       - name: Run python file
         run: |
-          url=google.com python url-check.py
+          url = google.com python url-check.py
 
