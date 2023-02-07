@@ -23,8 +23,14 @@ jobs:
           result=$(url=google.com python url-check.py)
           echo $result
       #     url=google.com python url-check.py
-      # - name: Check result
-      #   run: |
+      - name: Check result
+        continue-on-error: true
+        if: $result == '200'
+        run: echo Đây là website
+      - name: Check result 1
+        continue-on-error: true
+        if: $result != '200'
+        run: echo Đây là website
       # - name: Check web health check
       #   continue-on-error: true
       #   env:
