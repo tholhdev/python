@@ -6,5 +6,5 @@ import requests
 # except KeyError:
 
 url_test = os.environ['url']
-x = requests.get('url_test')
+x = requests.get('http://url_test')
 print(x.status_code)
