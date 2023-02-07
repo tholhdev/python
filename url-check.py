@@ -1,5 +1,8 @@
 import os
 import requests
 
-x = requests.get('https://w3schools.com')
+try:
+    url_test = os.environ["url"]
+except KeyError:
+x = requests.get('url_test')
 print(x.status_code)
