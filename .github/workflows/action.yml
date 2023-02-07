@@ -25,7 +25,7 @@ jobs:
         continue-on-error: true
         env:
           code: ${{ steps.web_health_check.output }}
-        if: code == '200'
+        if: $code == '200'
         run: echo steps.web_health_check.output
       - name: Check web health check 1
         continue-on-error: true
