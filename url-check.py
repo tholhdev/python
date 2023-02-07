@@ -13,4 +13,4 @@ def get_status():
     print(x.status_code)
     return x.status_code
 
-get_status(y)
+get_status()
