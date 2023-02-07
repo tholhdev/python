@@ -24,6 +24,8 @@ jobs:
           echo $result
       #     url=google.com python url-check.py
       - name: Check result
+        run: echo ${{ env.result }}
+      - name: Check result
         continue-on-error: true
         if: ${{ env.result }} == '200'
         run: echo Đây là website
